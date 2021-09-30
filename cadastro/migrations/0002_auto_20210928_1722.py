@@ -54,7 +54,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='account',
-            name='primeiro_nome',
+            name='first_name',
             field=models.CharField(blank=True, max_length=50),
         ),
         migrations.AddField(
@@ -74,7 +74,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='account',
-            name='sobrenome',
+            name='last_name',
             field=models.CharField(blank=True, max_length=50),
         ),
         migrations.AddField(

@@ -1,33 +1,39 @@
 from django.shortcuts import render, redirect
 from .forms import VoluntarioForm, UsuarioForm, IdosoForm
-from django.contrib.auth.forms import AuthenticationForm, authenticate
 from django.contrib.auth import login
-from django.http import Http404
+from .models import Voluntario, Idoso
 
 
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'index.html')
+    user = request.user
 
-
-def entrar(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request.POST)
-        print(form.error_messages)
-        print('passoooooooooooooooou')
-        if form.is_valid():
-            user = authenticate(request, username=form.username, password=form.password)
-            print('passoooooooooooooooou')
-            if user is not None:
-                print('passoooooooooooooooou')
-                login(request, user)
-                return redirect('index')
-
+    if not Voluntario.objects.filter(voluntario_id=user.id):
+        if not Idoso.objects.filter(idoso_id=user.id):
+            context = {
+                'user': user,
+                'qs': [],
+                'role': 'adm'
+            }
+        else:
+            qs = Idoso.objects.filter(idoso_id=user.id)
+            context = {
+                'user': user,
+                'qs': qs,
+                'role': 'I'
+            }
     else:
-        form = AuthenticationForm()
-    return render(request, 'entrar.html', {'form':form})
+        qs = Voluntario.objects.filter(voluntario_id=user.id)
+        context = {
+            'user': user,
+            'qs': qs,
+            'role': 'V'
+        }
+
+    return render(request, 'index.html', context)
+
 
 
 def pag_cadastro(request):
@@ -46,11 +52,13 @@ def elder_cadastro(request):
             idoso.idoso = user
 
             idoso.save()
+
+            login(request, user)
             return redirect('index')
 
     else:
-        user_form = UsuarioForm(request.POST)
-        form = IdosoForm(request.POST)
+        user_form = UsuarioForm()
+        form = IdosoForm()
 
     context = {'user_form': user_form, 'form': form}
     return render(request, 'elder_cadastro.html', context)
@@ -68,12 +76,21 @@ def voluntario_cadastro(request):
             voluntario.voluntario = user
 
             voluntario.save()
+
+            login(request, user)
             return redirect('index')
 
     else:
-        user_form = UsuarioForm(request.POST)
-        form = VoluntarioForm(request.POST)
+        user_form = UsuarioForm()
+        form = VoluntarioForm()
 
     context = {'user_form':user_form, 'form': form}
     return render(request, 'voluntario_cadastro.html', context)
 
+
+def perfil_voluntario(request):
+    pass
+
+
+def perfil_idoso(request):
+    pass

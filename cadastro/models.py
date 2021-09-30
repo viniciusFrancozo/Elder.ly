@@ -5,12 +5,14 @@ from django.dispatch import receiver
 
 
 class MyAccountManager(BaseUserManager):
-    def create_user(self, email, password=None):
+    def create_user(self, email, first_name, last_name, password=None):
         if not email:
             raise ValueError('O usuário deve conter um e-mail válido')
 
         user = self.model(
             email=self.normalize_email(email),
+            first_name=self.first_name,
+            last_name=self.last_name
         )
         user.set_password(password)
         user.save(using=self._db)
@@ -43,14 +45,14 @@ class Account(AbstractUser, PermissionsMixin):
     # Data required for serving or request a service
     estado = models.CharField(max_length=30, blank=True)
     cidade = models.CharField(max_length=50, blank=True)
-    cep = models.CharField(max_length=10, blank=True)
+    cep = models.CharField(verbose_name='CPF', max_length=10, blank=True)
     bairro = models.CharField(max_length=50, blank=True)
     rua = models.CharField(max_length=50, blank=True)
-    numero_res = models.CharField(max_length=6, blank=True)
-    primeiro_nome = models.CharField(max_length=50, blank=True)
-    sobrenome = models.CharField(max_length=50, blank=True)
-    rg = models.CharField(max_length=50, blank=True)
-    cpf = models.CharField(max_length=50, blank=True)
+    numero_res = models.CharField(verbose_name='Número', max_length=6, blank=True)
+    first_name = models.CharField(verbose_name='Nome', max_length=50)
+    last_name = models.CharField(verbose_name='Sobrenome', max_length=50)
+    rg = models.CharField(verbose_name='RG',max_length=50, blank=True)
+    cpf = models.CharField(verbose_name='CPF',max_length=50, blank=True)
     telefone = models.CharField(max_length=50, blank=True)
     estado_civil = models.CharField(max_length=10,
         choices=(
@@ -78,7 +80,7 @@ class Account(AbstractUser, PermissionsMixin):
     is_superuser = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['first_name', 'last_name']
 
     objects = MyAccountManager()
 

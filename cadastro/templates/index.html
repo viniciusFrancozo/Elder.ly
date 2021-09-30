@@ -5,10 +5,38 @@
     <title>Title</title>
 </head>
 <body>
-    <header>
-        <a href="{% url 'entrar' %}">sign in</a>
-        <a href="{% url 'cadastro' %}">sign up</a>
-        <a href="{% url 'index' %}">elder.ly</a>
-    </header>
+    {% if user.is_authenticated %}
+    {% if role == 'adm' %}
+        <h4>Olá ADM</h4>
+        <hr>
+        <header>
+            <a href="/admin">Admin Panel</a>
+            <a href="{% url 'logout' %}">logout</a>
+        </header>
+    {% elif role == 'V' %}
+        <h4>Olá, {{user.primeiro_nome.capitalize}}</h4>
+        <hr>
+        <header>
+            <a href="{% url 'logout' %}">logout</a>
+            <a href="{% url 'index' %}">elder.ly</a>
+            <a href="{% url 'perfil' %}">perfil</a>
+        </header>
+    {% elif role == 'I' %}
+        <h4>Olá, {{user.primeiro_nome.capitalize}}</h4>
+        <hr>
+        <header>
+            <a href="{% url 'logout' %}">logout</a>
+            <a href="{% url 'index' %}">elder.ly</a>
+            <a href="{% url 'perfil' %}">perfil</a>
+        </header>
+    {% endif %}
+    {% else %}
+        <header>
+            <a href="{% url 'login' %}">sign in</a>
+            <a href="{% url 'cadastro' %}">sign up</a>
+            <a href="{% url 'index' %}">elder.ly</a>
+        </header>
+    {% endif %}
+
 </body>
 </html>

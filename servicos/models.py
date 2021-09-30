@@ -14,3 +14,5 @@ class Servico(models.Model):
     observacao = models.TextField(blank=True, null=False)
 
 
+
+
