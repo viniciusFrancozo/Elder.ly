@@ -9,23 +9,24 @@ def perfil(request):
     context = userRole(user)
     print(context)
     if request.method == 'POST':
-        form_user = PerfilGeral(request.POST)
+        form_user = PerfilGeral(request.POST, instance=user)
         if context['role'] == 'I':
-            form = PerfilIdoso(request.POST)
+            form = PerfilIdoso(request.POST, instance=user)
         elif context['role'] == 'V':
-            form = PerfilVoluntario(request.POST)
+            form = PerfilVoluntario(request.POST, instance=user)
         else:
             form = ''
             form_user = ''
         if form.is_valid():
             form.save()
+            form_user.save()
     else:
-        form_user = PerfilGeral()
+        form_user = PerfilGeral(instance=user)
         if context['role'] == 'I':
             print('teste')
-            form = PerfilIdoso()
+            form = PerfilIdoso(instance=user)
         elif context['role'] == 'V':
-            form = PerfilVoluntario()
+            form = PerfilVoluntario(instance=user)
         else:
             form = ''
             form_user = ''

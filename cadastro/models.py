@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager, PermissionsMixin
-from django.db.models.signals import post_save
-from django.dispatch import receiver
+from django.utils.translation import gettext_lazy as _
 
 
 class MyAccountManager(BaseUserManager):
@@ -11,20 +10,22 @@ class MyAccountManager(BaseUserManager):
 
         user = self.model(
             email=self.normalize_email(email),
-            first_name=self.first_name,
-            last_name=self.last_name
+            first_name=first_name,
+            last_name=last_name,
         )
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, password=None):
+    def create_superuser(self, email, first_name, last_name, password=None):
         if not email:
             raise ValueError('O usuário deve conter um e-mail válido')
 
         user = self.create_user(
             email=self.normalize_email(email),
-            password = password
+            first_name=first_name,
+            last_name=last_name,
+            password=password,
         )
 
         user.is_staff = True
@@ -41,6 +42,8 @@ class Account(AbstractUser, PermissionsMixin):
     # Account registration data
     email = models.EmailField(verbose_name='email', max_length=60, unique=True)
     username = models.CharField(max_length=30)
+    first_name = models.CharField(_('Nome'), max_length=150, blank=True)
+    last_name = models.CharField(_('Sobrenome'), max_length=150, blank=True)
 
     # Data required for serving or request a service
     estado = models.CharField(max_length=30, blank=True)
@@ -49,8 +52,6 @@ class Account(AbstractUser, PermissionsMixin):
     bairro = models.CharField(max_length=50, blank=True)
     rua = models.CharField(max_length=50, blank=True)
     numero_res = models.CharField(verbose_name='Número', max_length=6, blank=True)
-    first_name = models.CharField(verbose_name='Nome', max_length=50)
-    last_name = models.CharField(verbose_name='Sobrenome', max_length=50)
     rg = models.CharField(verbose_name='RG',max_length=50, blank=True)
     cpf = models.CharField(verbose_name='CPF',max_length=50, blank=True)
     telefone = models.CharField(max_length=50, blank=True)

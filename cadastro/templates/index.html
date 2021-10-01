@@ -14,7 +14,7 @@
             <a href="{% url 'logout' %}">logout</a>
         </header>
     {% elif role == 'V' %}
-        <h4>Olá, {{user.primeiro_nome.capitalize}}</h4>
+        <h4>Olá, {{user.first_name.capitalize}}</h4>
         <hr>
         <header>
             <a href="{% url 'logout' %}">logout</a>
@@ -22,7 +22,7 @@
             <a href="{% url 'perfil' %}">perfil</a>
         </header>
     {% elif role == 'I' %}
-        <h4>Olá, {{user.primeiro_nome.capitalize}}</h4>
+        <h4>Olá, {{user.first_name.capitalize}}</h4>
         <hr>
         <header>
             <a href="{% url 'logout' %}">logout</a>

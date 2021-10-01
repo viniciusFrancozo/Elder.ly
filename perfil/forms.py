@@ -4,7 +4,8 @@ from cadastro.models import Idoso, Voluntario, Account
 class PerfilGeral(ModelForm):
     class Meta:
         model = Account
-        exclude = ('password', 'username', 'date_joined', 'last_login', 'is_admin', 'is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')
+
+        exclude = ('email','password', 'username', 'date_joined', 'last_login', 'is_admin', 'is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')
 
 class PerfilIdoso(ModelForm):
     class Meta:
@@ -14,4 +15,4 @@ class PerfilIdoso(ModelForm):
 class PerfilVoluntario(ModelForm):
     class Meta:
         model = Voluntario
-        fields = '__all__'
+        exclude = ('voluntario', 'disponivel')

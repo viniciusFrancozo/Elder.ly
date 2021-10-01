@@ -3,9 +3,10 @@ from django.forms import ModelForm
 from .models import Account
 from django.contrib.auth.forms import UserCreationForm
 from .models import Voluntario, Idoso
+from django.contrib.messages.views import SuccessMessageMixin
 
 
-class UsuarioForm(UserCreationForm):
+class UsuarioForm(SuccessMessageMixin, UserCreationForm):
     email = forms.EmailField(required=True)
 
     class Meta:
