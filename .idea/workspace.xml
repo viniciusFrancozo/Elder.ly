@@ -1,69 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffd05dd0-1590-4587-a60d-885f9cd592b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/servicos/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ece64af3-dee8-48e2-8e1b-c52090949f60" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cadastro/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servicos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicos/templates/solicitar_servico.html" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/templates/solicitar_servico.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1yrLKO3ja7afXkl0iZiITkugK22" />
+  <component name="ProjectId" id="1yuOKsAUoiG0pQX35BDiPmeIhSS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\vinicius\PycharmProjects\projetounivem\cadastro\templates\registration" />
-    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ffd05dd0-1590-4587-a60d-885f9cd592b9" name="Changes" comment="" />
-      <created>1633004696609</created>
+      <changelist id="ece64af3-dee8-48e2-8e1b-c52090949f60" name="Changes" comment="" />
+      <created>1633097945913</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1633004696609</updated>
+      <updated>1633097945913</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

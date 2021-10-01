@@ -1,5 +1,5 @@
 from django.db import models
-from cadastro.models import Voluntario,Idoso
+from cadastro.models import Voluntario, Idoso
 
 # Create your models here.
 
