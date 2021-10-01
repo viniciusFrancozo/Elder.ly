@@ -1,7 +1,11 @@
-from django.forms import ModelForm
-from .models import ServicoSolicitado
+from django import forms
+from .models import ServicoSolicitado, Idoso
 
-class ServicoModel(ModelForm):
+
+class ServicoModel(forms.ModelForm):
     class Meta:
         model = ServicoSolicitado
-        fields = ('servsolicitado', 'tagservico', 'data_compromisso', 'hora_compromisso', 'observacao')
+        fields = ('idoso_id', 'servsolicitado', 'tagservico', 'data_compromisso', 'hora_compromisso', 'observacao')
+        widgets = {
+            'idoso_id': forms.HiddenInput()
+        }

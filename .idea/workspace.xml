@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ece64af3-dee8-48e2-8e1b-c52090949f60" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicos/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servicos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servicos/templates/solicitar_servico.html" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/templates/solicitar_servico.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servicos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servicos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,5 +41,8 @@
       <updated>1633097945913</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
