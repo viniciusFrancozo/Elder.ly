@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffd05dd0-1590-4587-a60d-885f9cd592b9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/servicos/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfil/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/perfil/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfil/templates/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/perfil/templates/perfil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfil/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/perfil/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servicos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +36,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
