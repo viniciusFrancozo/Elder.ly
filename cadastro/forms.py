@@ -25,13 +25,13 @@ class UsuarioForm(SuccessMessageMixin, UserCreationForm):
 class VoluntarioForm(ModelForm):
     class Meta:
         model = Voluntario
-        fields = ('agenda', 'disponivel')
+        fields = ('agenda',)
 
 
 class IdosoForm(ModelForm):
     class Meta:
         model = Idoso
-        fields = ('em_atendimento',)
+        fields = ()
 
 
 class LoginForm(forms.Form):

@@ -41,9 +41,9 @@ def pag_cadastro(request):
 
 
 def elder_cadastro(request):
+    user_form = UsuarioForm(request.POST)
+    form = IdosoForm(request.POST)
     if request.method == 'POST':
-        user_form = UsuarioForm(request.POST)
-        form = IdosoForm(request.POST)
 
         if user_form.is_valid() and form.is_valid():
             user = user_form.save()

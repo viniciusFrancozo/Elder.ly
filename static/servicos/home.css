@@ -47,7 +47,7 @@ header{
 #bg{
     grid-area: left;
 
-    background: url('/img/bg.png') no-repeat top/contain;
+    background: url('/static/img/bg.png') no-repeat top/contain;
     background-position-x: -10rem;
 }
 main{
