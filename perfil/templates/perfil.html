@@ -1,17 +1,35 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{%static 'perfil/home.css'%}">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>elder.ly</title>
 </head>
+
 <body>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {{ form_user.as_p }}
+    <div class="content">
+        <header></header>
 
-        <button type="submit">atualizar</button>
+        <div id="bg"></div>
 
-    </form>
+        <main>
+            <div class="container">
+                <section>
+                    <h2>Realize seu cadastro gratuitamente!</h2>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        {{ form_user.as_p }}
+                        <button type="submit">Atualizar</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
