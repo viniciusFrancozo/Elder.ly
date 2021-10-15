@@ -23,7 +23,9 @@
                     <h2>Seja bem-vindo de volta!</h2>
                     <form method="POST">
                         {% csrf_token %}
-                        {{ form.as_p }}
+                        <input type="email" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="60" required="" id="id_username" placeholder="E-mail">
+                        <input type="password" name="password" autocomplete="current-password" required="" id="id_password" placeholder="Senha">
+                        {{form.non_field_errors}}
                         <button type="submit">entrar</button>
                     </form>
                 </section>

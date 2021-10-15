@@ -20,11 +20,11 @@
         <main>
             <div class="container">
                 <section>
-                    <h2>Realize seu cadastro gratuitamente!</h2>
+                    <h2>Perfil de {{user.first_name}}.</h2>
                     <form method="POST">
                         {% csrf_token %}
-                        {{ form.as_p }}
                         {{ form_user.as_p }}
+                        {{ form.as_p }}
                         <button type="submit">Atualizar</button>
                     </form>
                 </section>

@@ -69,6 +69,11 @@ body {
   border-radius: 0.25rem;
   font: 500 1rem var(--body-font);
   transition: background 0.3s;
+
+}
+
+#home #voluntario{
+  margin-left: 1rem;
 }
 
 .button:hover {
@@ -129,11 +134,11 @@ body {
   color: var(--title-color);
 }
 
-.logo spam {
+.logo span {
   color: var(--base-color);
 }
 
-.logo-alt spam {
+.logo-alt span {
   color: var(--body-color);
 }
 
@@ -250,6 +255,7 @@ nav.show div.icon-close {
 
 #home .image {
   position: relative;
+  height: 500px;
 }
 
 #home .image::before {
@@ -296,7 +302,7 @@ nav.show div.icon-close {
   }
 
   .section {
-    padding: 10rem 0;
+    padding: 7rem 0;
   }
 
   .section header,

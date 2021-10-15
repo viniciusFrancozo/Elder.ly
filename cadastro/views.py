@@ -35,17 +35,12 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-
-def pag_cadastro(request):
-    return render(request, 'cadastro.html')
-
-
 def elder_cadastro(request):
     user_form = UsuarioForm(request.POST)
     form = IdosoForm(request.POST)
     if request.method == 'POST':
-
         if user_form.is_valid() and form.is_valid():
+            print('test')
             user = user_form.save()
 
             idoso = form.save(commit=False)
@@ -87,10 +82,3 @@ def voluntario_cadastro(request):
     context = {'user_form':user_form, 'form': form}
     return render(request, 'voluntario_cadastro.html', context)
 
-
-def perfil_voluntario(request):
-    pass
-
-
-def perfil_idoso(request):
-    pass

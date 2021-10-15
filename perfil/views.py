@@ -7,31 +7,35 @@ from .forms import PerfilIdoso, PerfilGeral, PerfilVoluntario
 def perfil(request):
     user = request.user
     context = userRole(user)
-    print(context)
     if request.method == 'POST':
         form_user = PerfilGeral(request.POST, instance=user)
         if context['role'] == 'I':
-            form = PerfilIdoso(request.POST, instance=user)
+            form = PerfilIdoso(request.POST, instance=user.idoso)
         elif context['role'] == 'V':
-            form = PerfilVoluntario(request.POST, instance=user)
+            form = PerfilVoluntario(request.POST, instance=user.voluntario)
+            print(user.voluntario)
         else:
             form = ''
             form_user = ''
-        if form.is_valid():
-            form.save()
-            form_user.save()
+        if form.is_valid() and form_user.is_valid():
+            if context['role'] == 'I':
+                user = form_user.save()
+                midd = form.save(commit=False)
+                midd.voluntario = user
+                midd.save()
+            else:
+                form_user.save()
+                form.save()
     else:
         form_user = PerfilGeral(instance=user)
         if context['role'] == 'I':
-            print('teste')
-            form = PerfilIdoso(instance=user)
+            form = PerfilIdoso(instance=user.idoso)
         elif context['role'] == 'V':
-            form = PerfilVoluntario(instance=user)
+            form = PerfilVoluntario(instance=user.voluntario)
         else:
             form = ''
             form_user = ''
 
     context['form'] = form
     context['form_user'] = form_user
-    print(context)
     return render(request, 'perfil.html', context)

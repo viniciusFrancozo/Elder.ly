@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cadastro',
     'servicos',
-    'perfil'
+    'perfil',
+    'taggit'
 ]
 
 MIDDLEWARE = [

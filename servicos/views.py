@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import ServicoModel
 from cadastro.models import Idoso
 
@@ -12,6 +12,7 @@ def solicitar_servico(request):
             new_form = form.save(commit=False)
             new_form.idoso_id = Idoso.objects.filter(idoso_id=user.id)[0]
             new_form.save()
+            return redirect('index')
     else:
         form = ServicoModel()
 

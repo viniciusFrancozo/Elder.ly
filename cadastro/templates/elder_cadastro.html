@@ -19,14 +19,13 @@
         <main>
             <div class="container">
                 <section>
-                    <h2>Realize seu cadastro gratuitamente!</h2>
+                    <h2>Torne-se um <span class="elder-helper">Elder</span> gratuitamente!</h2>
                     <form method="POST">
                         {% csrf_token %}
                         {{ user_form.as_p }}
                         {{ form.as_p }}
-                        <!--<input class="button" type="submit">!-->
+                        <button type="submit">Cadastrar</button>
                     </form>
-                    <button>Cadastrar</button>
                 </section>
             </div>
         </main>

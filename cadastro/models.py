@@ -42,8 +42,8 @@ class Account(AbstractUser, PermissionsMixin):
     # Account registration data
     email = models.EmailField(verbose_name='email', max_length=60, unique=True)
     username = models.CharField(max_length=30)
-    first_name = models.CharField(_('Nome'), max_length=150, blank=True)
-    last_name = models.CharField(_('Sobrenome'), max_length=150, blank=True)
+    first_name = models.CharField(_('Nome'), max_length=150)
+    last_name = models.CharField(_('Sobrenome'), max_length=150)
 
     # Data required for serving or request a service
     estado = models.CharField(max_length=30, blank=True)
@@ -57,19 +57,21 @@ class Account(AbstractUser, PermissionsMixin):
     telefone = models.CharField(max_length=50, blank=True)
     estado_civil = models.CharField(max_length=10,
         choices=(
+            ('', 'Estado Civíl'),
             ('CASADO', 'Casado(a)'),
             ('SOLTEIRO', 'Solteiro(a)'),
             ('DIVORCIADO', 'Divorciado(a)'),
             ('VIUVO', 'Viúvo(a)'),
             ('OUTROS', 'Outros')
-        ), default='OUTROS'
+        ), default=''
     )
     escolaridade = models.CharField(max_length=30, blank=True)
     sexo = models.CharField(max_length=10,
         choices=(
+            ('', 'Sexo'),
             ('MASCULINO', 'Masculino'),
             ('FEMININO', 'Feminino')
-        ), default='MASCULINO'
+        ), default=''
     )
 
     # Required Django AbstractUser model fields
@@ -102,11 +104,12 @@ class Voluntario(models.Model):
     # Voluntario data for serving
     agenda = models.CharField(max_length=10,
         choices=(
+            ('', 'Seu Horário Preferido'),
             ('MANHA', 'Manhã'),
             ('TARDE', 'Tarde'),
             ('NOITE', 'Noite'),
             ('ANY', 'Qualquer Horário')
-        ), default='ANY'
+        ), default=''
     )
     disponivel = models.BooleanField(default=True)
 
