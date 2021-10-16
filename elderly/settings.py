@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'cadastro',
     'servicos',
     'perfil',
-    'taggit'
 ]
 
 MIDDLEWARE = [
