@@ -13,7 +13,6 @@ def perfil(request):
             form = PerfilIdoso(request.POST, instance=user.idoso)
         elif context['role'] == 'V':
             form = PerfilVoluntario(request.POST, instance=user.voluntario)
-            print(user.voluntario)
         else:
             form = ''
             form_user = ''

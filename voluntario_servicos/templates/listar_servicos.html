@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            {% for i in servicos %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="input-group">
+                                      <span class="input-group-text" id="basic-addon1">Serviço:</span>
+                                      <input type="text" class="form-control" value="{{i.servsolicitado}}" aria-label="Username" aria-describedby="basic-addon1" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="input-group">
+                                      <span class="input-group-text">Data e Horário:</span>
+                                      <input type="text" aria-label="Data" value="{{i.data_compromisso|date:'DATE_FORMAT'}}" class="form-control" disabled>
+                                      <input type="text" aria-label="Horario" value="{{i.hora_compromisso|time:'TIME_FORMAT'}}" class="form-control" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group">
+                                      <span class="input-group-text">Observação:</span>
+                                      <textarea style="max-height: 40px" class="form-control" aria-label="Descricao" disabled>{{i.observacao}}</textarea>
+                                    </div>
+                                </div>
+                                <div style="width: 32%">
+                                    <div class="input-group">
+                                      <span class="input-group-text" id="basic-addon3">Etiqueta:</span>
+                                      <input  type="text" class="form-control" value="{{i.get_tagservico_display}}" aria-label="Username" aria-describedby="basic-addon3" disabled>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <a href="{% url 'visualizar' i.id %}" style="width: 100%" type="button" class="btn btn-primary">
+                                      Visualizar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

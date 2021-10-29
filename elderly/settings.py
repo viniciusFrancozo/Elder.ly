@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'cadastro',
     'servicos',
     'perfil',
+    'voluntario_servicos'
 ]
 
 MIDDLEWARE = [

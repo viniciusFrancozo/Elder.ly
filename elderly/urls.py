@@ -6,5 +6,6 @@ urlpatterns = [
     path('', include('cadastro.urls')),
     path('', include('servicos.urls')),
     path('', include('perfil.urls')),
+    path('', include('voluntario_servicos.urls')),
     path('', include('django.contrib.auth.urls')),
 ]
