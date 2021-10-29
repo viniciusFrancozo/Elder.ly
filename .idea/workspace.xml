@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ece64af3-dee8-48e2-8e1b-c52090949f60" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/servicos/templates/confirmar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/servicos/templates/meus_servicos.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/voluntario_servicos/templates/listar_servicos.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/voluntario_servicos/templates/visualizar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/voluntario_servicos/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/templates/cadastro.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elderly/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/elderly/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elderly/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/elderly/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfil/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/perfil/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servicos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servicos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servicos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/servicos/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

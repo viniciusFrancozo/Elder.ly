@@ -26,7 +26,7 @@ def meus_servicos(request):
 
     abertos = ServicoSolicitado.objects.filter(idoso_id=idoso.id, voluntario_id__isnull=True)
     aguardando = ServicoSolicitado.objects.filter(idoso_id=idoso.id).exclude(voluntario_id__isnull=True).exclude(confirmado=True)
-    em_andamento = ServicoSolicitado.objects.filter(idoso_id=idoso.id).exclude(data_inicio__isnull=True).exclude(data_fim__isnull=False)
+    em_andamento = ServicoSolicitado.objects.filter(idoso_id=idoso.id).exclude(confirmado=False).exclude(data_fim__isnull=False)
     concluidos = ServicoSolicitado.objects.filter(idoso_id=idoso.id).exclude(data_fim__isnull=True).exclude(data_inicio__isnull=True)
 
     context = {
