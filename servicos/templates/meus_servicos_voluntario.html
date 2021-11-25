@@ -10,44 +10,6 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Abertos</h5>
-                {% for i in abertos %}
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="input-group">
-                                      <span class="input-group-text" id="basic-addon1">Serviço:</span>
-                                      <input type="text" class="form-control" value="{{i.servsolicitado}}" aria-label="Username" aria-describedby="basic-addon1" disabled>
-                                    </div>
-                                </div>
-                                <div class="col-sm">
-                                    <div class="input-group">
-                                      <span class="input-group-text">Data e Horário:</span>
-                                      <input type="text" aria-label="Data" value="{{i.data_compromisso|date:'DATE_FORMAT'}}" class="form-control" disabled>
-                                      <input type="text" aria-label="Horario" value="{{i.hora_compromisso|time:'TIME_FORMAT'}}" class="form-control" disabled>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="input-group">
-                                      <span class="input-group-text">Observação:</span>
-                                      <textarea style="max-height: 40px" class="form-control" aria-label="Descricao" disabled>{{i.observacao}}</textarea>
-                                    </div>
-                                </div>
-                                <div style="width: 32%">
-                                    <div class="input-group">
-                                      <span class="input-group-text" id="basic-addon3">Etiqueta:</span>
-                                      <input  type="text" class="form-control" value="{{i.get_tagservico_display}}" aria-label="Username" aria-describedby="basic-addon3" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            {% endfor %}
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
             <h5 class="card-title">Aguardando Confirmação</h5>
                 {% for k,v in aguardando.items %}
                     <div class="card mb-3">
@@ -78,14 +40,6 @@
                                       <input  type="text" class="form-control" value="{{k.get_tagservico_display}}" aria-label="Username" aria-describedby="basic-addon3" disabled>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <form method="post">
-                                        {% csrf_token %}
-                                        <a href="{% url 'confirmar' k.id %}" style="width: 100%" type="submit" class="btn btn-primary">
-                                          Confirmar
-                                        </a>
-                                    </form>
-                                </div>
                                 <div class="col-6">
                                     <div class="input-group">
                                       <span class="input-group-text">Nome:</span>
@@ -94,8 +48,8 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="input-group">
-                                      <span class="input-group-text">Ajudas Realizadas:</span>
-                                      <input type="text" class="form-control" value="5" aria-label="Descricao" disabled>
+                                      <span class="input-group-text">Cidade:</span>
+                                      <input type="text" class="form-control" value="{{v.cidade}}" aria-label="Descricao" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -151,9 +105,15 @@
                                 <div class="col">
                                     <form method="post">
                                         {% csrf_token %}
-                                        <a href="{% url 'encerrar' i.id %}" style="width: 100%" type="submit" class="btn btn-primary">
-                                          Encerrar
+                                        {% if i.data_inicio is Null %}
+                                        <a href="{% url 'iniciar' i.id %}" style="width: 100%" type="submit" class="btn btn-primary">
+                                          Iniciar
                                         </a>
+                                        {% else %}
+                                        <a style="width: 100%" type="submit" class="btn btn-secondary">
+                                          Iniciado
+                                        </a>
+                                        {% endif %}
                                     </form>
                                 </div>
                             </div>

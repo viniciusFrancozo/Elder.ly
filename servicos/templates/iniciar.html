@@ -25,42 +25,42 @@
                         <div class="col-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Nome</span>
-                                <input type="text" value="{{user.first_name}}" class="form-control" aria-describedby="basic-addon1" disabled>
+                                <input type="text" value="{{idoso.first_name}}" class="form-control" aria-describedby="basic-addon1" disabled>
                             </div>
                         </div>
 
                         <div class="col-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon2">Sobrenome</span>
-                                <input type="text" value="{{user.last_name}}" class="form-control" aria-describedby="basic-addon2" disabled>
+                                <input type="text" value="{{idoso.last_name}}" class="form-control" aria-describedby="basic-addon2" disabled>
                             </div>
                         </div>
 
                         <div class="col-4">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon3">Estado</span>
-                                <input type="text" value="{{user.estado}}" class="form-control" aria-describedby="basic-addon3" disabled>
+                                <input type="text" value="{{idoso.estado}}" class="form-control" aria-describedby="basic-addon3" disabled>
                             </div>
                         </div>
 
                         <div class="col-4">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon4">Cidade</span>
-                                <input type="text" value="{{user.cidade}}" class="form-control" aria-describedby="basic-addon4" disabled>
+                                <input type="text" value="{{idoso.cidade}}" class="form-control" aria-describedby="basic-addon4" disabled>
                             </div>
                         </div>
 
                         <div class="col-4">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon5">Bairro</span>
-                                <input type="text" value="{{user.bairro}}" class="form-control" aria-describedby="basic-addon5" disabled>
+                                <input type="text" value="{{idoso.bairro}}" class="form-control" aria-describedby="basic-addon5" disabled>
                             </div>
                         </div>
 
                         <div class="col-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon6">Estado Civíl</span>
-                                <input type="text" value="{{user.estado_civil}}" class="form-control" aria-describedby="basic-addon6" disabled>
+                                <input type="text" value="{{idoso.estado_civil}}" class="form-control" aria-describedby="basic-addon6" disabled>
                             </div>
                         </div>
 
@@ -96,7 +96,7 @@
                         <div class="col-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon8">Nome Ajudante</span>
-                                <input type="text" value="{{voluntario.first_name}}" class="form-control" aria-describedby="basic-addon8" disabled>
+                                <input type="text" value="{{user.first_name}}" class="form-control" aria-describedby="basic-addon8" disabled>
                             </div>
                         </div>
                         <div class="col-6">
@@ -107,8 +107,8 @@
                         </div>
 
                         <div class="col text-end">
-                            <a href="" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> Confirmar </a>
-                            <a href="{% url 'meus_servicos' %}" type="button" class="btn btn-secondary"> Retornar </a>
+                            <a href="" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> Iniciar </a>
+                            <a href="{% url 'meus_servicos_voluntario' %}" type="button" class="btn btn-secondary"> Retornar </a>
                         </div>
                     </div>
                 </div>
@@ -124,9 +124,8 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              Seu serviço foi confirmado por um <em>Helper</em> que se prontificou a ajudar.<br><br>
-              Caso confirme, será enviado uma notificação para o <em>Helper</em>, sinalizando que o serviço poderá ser executado. <br><br>
-              Alguns de seus dados serão disponiblizados para ele, como <em>Contato e Endereço</em>. Os dados do seu <em>Helper</em> também serão disponibilizados para você!
+              Seu serviço será iniciado.<br><br>
+              Caso confirme, seu serviço será iniciado e contará com uma duração de 48h para ser cumprido, sendo cancelado automaticamente após este prazo. <br><br>
             </div>
             <div class="modal-footer">
                 <form method="post">

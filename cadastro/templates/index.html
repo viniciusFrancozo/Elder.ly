@@ -30,6 +30,7 @@
                                 <li><a class="title" href="{% url 'logout' %}">logout</a></li>
                                 <li><a class="title" href="{% url 'perfil' %}">perfil</a></li>
                                 <li><a class="title" href="{% url 'listar_servicos' %}">visualizar serviços</a></li>
+                                <li><a class="title" href="{% url 'meus_servicos_voluntario' %}">meus serviços</a></li>
                             {% elif role == 'I' %}
                                 <h4>Olá, {{user.first_name.capitalize}}</h4>
                                 <li><a class="title" href="{% url 'logout' %}">logout</a></li>
